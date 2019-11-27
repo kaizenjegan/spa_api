@@ -3,11 +3,34 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/:centerId', function (req, res, next) {
-  res.send('respond with a center');
+  let center = {
+    "center": {
+      "id": "34f7b069-1bce-4f24-b9b2-f58ebbf768f0",
+      "name": "Zenoti Inc.",
+      "code": "Z001",
+      "phone": "0000000000",
+      "time_zone_id": 6,
+      "currency_id": 148,
+      "email": "apisupport@zenoti.com"
+    },
+    "error": null
+  }
+  res.send(center);
 });
 
 router.get('/:centerId/room', function (req, res, next) {
-  res.send('respond with a room');
+  let room = {
+    "id": "699ec863-c155-4c4b-bf58-5310a7d1df1c",
+    "code": "",
+    "name": "15% Premium Room",
+    "room_category_id": "",
+    "description": "",
+    "capacity": 2,
+    "can_exceed_capacity": false,
+    "only_one_appointment": false
+  };
+
+  res.send(room);
 });
 
 router.get('/:centerId/room/:roomId/', function (req, res, next) {
